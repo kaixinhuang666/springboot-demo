@@ -1,5 +1,15 @@
 package com.example.demo.dto;
 
+import com.example.demo.enums.Gender;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Builder
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class StudentDTO {
 
     private long id;
@@ -8,29 +18,35 @@ public class StudentDTO {
 
     private String email;
 
-    public long getId() {
-        return id;
-    }
+    private Gender gender;
 
-    public void setId(long id) {
-        this.id = id;
-    }
+    private int minAge;
 
-    public String getName() {
-        return name;
-    }
+    private int maxAge;
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
+//    public long getId() {
+//        return id;
+//    }
+//
+//    public void setId(long id) {
+//        this.id = id;
+//    }
+//
+//    public String getName() {
+//        return name;
+//    }
+//
+//    public void setName(String name) {
+//        this.name = name;
+//    }
+//
+//    public String getEmail() {
+//        return email;
+//    }
+//
+//    public void setEmail(String email) {
+//        this.email = email;
+//    }
 
 
 }

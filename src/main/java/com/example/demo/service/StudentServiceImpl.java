@@ -11,6 +11,7 @@ import org.springframework.util.CollectionUtils;
 import org.springframework.util.StringUtils;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 
@@ -55,6 +56,17 @@ public class StudentServiceImpl implements StudentService {
         Student student = studentRepository.save(studentInDB);
         return StudentConverter.convertStudent(student);
     }
+
+    @Override
+    public List<StudentDTO> getStudentsByAges(int maxAge, int minAge) {
+        List<Student> studentList = studentRepository.findByAgeBetween(minAge, maxAge);
+        if (CollectionUtils.isEmpty(studentList)) {
+            return List.of();
+        }
+
+        return studentList.stream().map(StudentConverter::convertStudent).collect(Collectors.toList());
+    }
+
 }
 
 

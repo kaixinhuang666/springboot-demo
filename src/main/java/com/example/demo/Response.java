@@ -1,5 +1,10 @@
 package com.example.demo;
 
+import lombok.Data;
+
+
+
+@Data
 public class Response<T> {
 
     private T data;
@@ -20,20 +25,20 @@ public class Response<T> {
         return response;
     }
 
-    public T getData() {
-        return data;
-    }
-
-    public void setData(T data) {
-        this.data = data;
-    }
-
     public boolean isSuccess() {
         return success;
     }
 
     public void setSuccess(boolean success) {
         this.success = success;
+    }
+
+    public T getData() {
+        return data;
+    }
+
+    public void setData(T data) {
+        this.data = data;
     }
 
     public String getErrorMsg() {
